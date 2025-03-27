@@ -5,7 +5,7 @@ import com.uiktp.entities.users.dtos.RegisterDTO;
 import com.uiktp.entities.users.User;
 import com.uiktp.security.TokenService;
 import com.uiktp.repositories.UserRepository;
-import com.uiktp.services.AuthenticationService;
+import com.uiktp.services.Implementation.AuthenticationService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

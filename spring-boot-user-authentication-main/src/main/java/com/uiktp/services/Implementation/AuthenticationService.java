@@ -1,9 +1,10 @@
-package com.uiktp.services;
+package com.uiktp.services.Implementation;
 
 import com.uiktp.entities.users.User;
 import com.uiktp.exceptions.InvalidArgumentsException;
 import com.uiktp.exceptions.*;
 import com.uiktp.repositories.UserRepository;
+import com.uiktp.services.Interface.AuthenticationServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
