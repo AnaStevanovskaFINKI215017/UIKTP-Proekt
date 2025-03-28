@@ -10,7 +10,7 @@
 }
 
 .login-box {
-    width: 400px;
+    width: 500px;
     padding: 30px;
     background: #601010; /* Dark Red */
     border-radius: 10px;
@@ -46,7 +46,9 @@ h1 {
     width: calc(100% - 24px); /* Fix width */
     background: white;
 }
-
+.buttons{
+    margin: 30px;
+}
 /* Unified button styles */
 .btn {
     background-color: lightgray;
@@ -58,6 +60,7 @@ h1 {
     font-size: 16px;
     width: 100%;
     margin-top: 10px; /* Add spacing */
+    margin-bottom: 20px;
     transition: background 0.3s ease;
 }
 
@@ -68,4 +71,8 @@ h1 {
 .btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+.footer{
+    margin-top: 80px;
 }

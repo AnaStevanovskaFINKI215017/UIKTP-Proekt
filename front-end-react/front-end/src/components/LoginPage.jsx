@@ -49,13 +49,15 @@ const LoginPage = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
+                    <div className="buttons"></div>
                     <button type="submit" className="btn" disabled={isLoading}>
                         {isLoading ? "Logging in..." : "Log In"}
                     </button>
+                    <button className="btn" onClick={() => navigate("/register")}>
+                        New User? Register Now
+                    </button>
                 </form>
-                <button className="btn" onClick={() => navigate("/register")}>
-                    New User? Register Now
-                </button>
+                <div className='footer'></div>
             </div>
         </div>
     );
