@@ -5,26 +5,22 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: white;
+    flex-direction: column;
 }
 
 .login-box {
-    width: 350px;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: 400px;
+    padding: 30px;
+    background: #601010; /* Dark Red */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-.login-title {
+h1 {
+    color: black;
     font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.login-subtitle {
-    font-size: 14px;
-    color: gray;
     margin-bottom: 20px;
 }
 
@@ -37,43 +33,39 @@
 .login-form label {
     font-size: 14px;
     margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
 }
 
 .login-form input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 20px; /* Increased spacing */
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
+    width: calc(100% - 24px); /* Fix width */
+    background: white;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 15px;
-}
-
-.error-message {
-    color: red;
-    margin-bottom: 15px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+/* Unified button styles */
+.btn {
+    background-color: lightgray;
+    color: black;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 100%;
+    margin-top: 10px; /* Add spacing */
+    transition: background 0.3s ease;
 }
 
-button:disabled {
+.btn:hover {
+    background-color: #bbb;
+}
+
+.btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-}
-
-button:hover:not(:disabled) {
-    background-color: #0056b3;
 }
