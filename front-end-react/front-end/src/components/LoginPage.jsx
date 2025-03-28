@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import { Link } from "react-router-dom";
 // Test
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -36,17 +37,22 @@ const LoginPage = () => {
                 {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit} className="login-form">
                     <label>Email Address</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                     <label>Password</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                     <div className="remember-me">
-                        <input type="checkbox" id="remember" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
+                        <input type="checkbox" id="remember" checked={rememberMe}
+                               onChange={(e) => setRememberMe(e.target.checked)}/>
                         <label htmlFor="remember">Remember me</label>
                     </div>
                     <button type="submit" disabled={isLoading}>{isLoading ? 'Logging in...' : 'Login'}</button>
+                    <p>
+                        Don't have an account? <Link to="/register">Register here</Link>
+                    </p>
                 </form>
             </div>
         </div>
+
     );
 };
 

@@ -1,0 +1,72 @@
+/* RegisterPage.css */
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.register-box {
+    width: 350px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.register-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.register-subtitle {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.register-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.register-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #218838;
+}
