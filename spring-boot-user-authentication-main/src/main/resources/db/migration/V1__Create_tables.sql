@@ -1,5 +1,5 @@
 CREATE TABLE users (
-                       id UUID PRIMARY KEY,
+                       id SERIAL PRIMARY KEY,
                        name VARCHAR(255) NOT NULL,
                        email VARCHAR(255) UNIQUE NOT NULL,
                        password VARCHAR(255) NOT NULL,
@@ -16,11 +16,19 @@ CREATE TABLE courses (
 CREATE TABLE semesters (
                         id SERIAL PRIMARY KEY,
                         name VARCHAR(255) NOT NULL,
-                        user_id UUID REFERENCES users(id) ON DELETE CASCADE
+                        user_id INT REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE semester_courses (
                         semester_id BIGINT REFERENCES semesters(id) ON DELETE CASCADE,
                         course_id BIGINT REFERENCES courses(id) ON DELETE CASCADE,
                         PRIMARY KEY (semester_id, course_id)
+);
+
+CREATE TABLE flashcards (
+                            id SERIAL PRIMARY KEY,
+                            question VARCHAR(255) NOT NULL,
+                            answer TEXT NOT NULL,
+                            course_id BIGINT REFERENCES courses(id) ON DELETE CASCADE,
+                            attachment BYTEA
 );
