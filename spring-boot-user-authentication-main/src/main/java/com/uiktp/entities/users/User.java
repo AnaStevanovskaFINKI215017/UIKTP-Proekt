@@ -39,11 +39,12 @@ public class User implements UserDetails {
 
     @Column(nullable = false)
     private String index;
-    public User(String name, String email, String password, UserRole role) {
+    public User(String name, String email, String password, UserRole role, String index) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.index = index;
 
     }
 

@@ -17,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping( "/auth")
 public class AuthenticationController {
@@ -84,26 +86,21 @@ public class AuthenticationController {
     }
     @PostMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
-        // Retrieve the token from cookies
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("jwt".equals(cookie.getName())) {
                     String token = cookie.getValue();
-                    // Optionally blacklist the token
                     tokenService.invalidateToken(token);
 
-                    // Clear the cookie
                     Cookie jwtCookie = new Cookie("jwt", null);
                     jwtCookie.setHttpOnly(true);
                     jwtCookie.setPath("/");
-                    jwtCookie.setMaxAge(0); // Expire immediately
+                    jwtCookie.setMaxAge(0);
                     response.addCookie(jwtCookie);
                 }
             }
         }
-
-        // Redirect to login page after logout
         return "redirect:/auth/login?logout=true";
     }
     @GetMapping("/register")
@@ -113,12 +110,18 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public String processRegister(RegisterDTO data) {
-        if (this.userRepository.findByEmail(data.email()) != null) {
+//        if (this.userRepository.findByEmail(data.email()) != null) {
+//            return "redirect:/auth/register?error=Email already exists";
+//        }
+
+        Optional<User> existingUser = this.userRepository.findByEmail(data.email());
+
+        if (existingUser.isPresent()) {
             return "redirect:/auth/register?error=Email already exists";
         }
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User user = new User(data.name(), data.email(), encryptedPassword, data.role());
+        User user = new User(data.name(), data.email(), encryptedPassword, data.role(), data.index());
 
         this.userRepository.save(user);
 
