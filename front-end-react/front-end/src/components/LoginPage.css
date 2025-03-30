@@ -48,6 +48,8 @@ h1 {
 }
 .buttons{
     margin: 30px;
+    text-align: center;
+    align-content: center;
 }
 /* Unified button styles */
 .btn {

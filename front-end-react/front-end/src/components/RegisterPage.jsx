@@ -52,7 +52,7 @@ const RegisterPage = () => {
                         <button type="submit">Register</button>
                     </form>
                     <div className="login-link">
-                        Already have an account? <Link to="/">Login here</Link>
+                        Already have an account? <Link to="/login">Login here</Link>
                     </div>
                 </div>
                 <div className="logo-container">
