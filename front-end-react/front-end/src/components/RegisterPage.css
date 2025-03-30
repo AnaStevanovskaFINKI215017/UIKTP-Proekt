@@ -1,0 +1,85 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.register-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.register-box {
+    flex: 1;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 250px;
+}
+
+/* Remove the previous .graduation-cap styles as they're no longer needed */
+
+.logo-container h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.register-box h1 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box input {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-box button {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.register-box button:hover {
+    background-color: #600000;
+}
+
+.login-link {
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #800000;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
