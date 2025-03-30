@@ -46,14 +46,12 @@ h1 {
     width: calc(100% - 24px); /* Fix width */
     background: white;
 }
-
-.buttons {
+.buttons{
     margin: 30px;
 }
-
-/* More specific button styles */
-.login-box .btn {
-    background-color: #d3d3d3; /* Light Gray */
+/* Unified button styles */
+.btn {
+    background-color: lightgray;
     color: black;
     padding: 12px;
     border: none;
@@ -66,15 +64,15 @@ h1 {
     transition: background 0.3s ease;
 }
 
-.login-box .btn:hover {
-    background-color: #bbb; /* Slightly darker gray on hover */
+.btn:hover {
+    background-color: #bbb;
 }
 
-.login-box .btn:disabled {
-    background-color: #ccc; /* Lighter gray when disabled */
+.btn:disabled {
+    background-color: #ccc;
     cursor: not-allowed;
 }
 
-.footer {
+.footer{
     margin-top: 80px;
 }
