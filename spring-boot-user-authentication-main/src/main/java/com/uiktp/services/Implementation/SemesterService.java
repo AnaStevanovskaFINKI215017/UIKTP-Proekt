@@ -1,6 +1,9 @@
 package com.uiktp.services.Implementation;
 
+import com.uiktp.entities.users.Course;
 import com.uiktp.entities.users.Semester;
+import com.uiktp.exceptions.SemesterNotFoundException;
+import com.uiktp.repositories.CourseRepository;
 import com.uiktp.repositories.SemesterRepository;
 import com.uiktp.services.Interface.SemesterServiceI;
 import org.springframework.stereotype.Service;
@@ -12,9 +15,11 @@ import java.util.Optional;
 public class SemesterService implements SemesterServiceI {
 
     private final SemesterRepository semesterRepository;
+    private final CourseService courseService;
 
-    public SemesterService(SemesterRepository semesterRepository) {
+    public SemesterService(SemesterRepository semesterRepository, CourseService courseService) {
         this.semesterRepository = semesterRepository;
+        this.courseService = courseService;
     }
 
     @Override
@@ -42,6 +47,21 @@ public class SemesterService implements SemesterServiceI {
         }
         return null;
     }
+
+    @Override
+    public Semester addCourseToSemester(Long id, Long courseId) {
+
+        Semester semester = semesterRepository.findById(id).orElseThrow(SemesterNotFoundException::new);
+        List<Course> courses = semester.getCourses();
+        if (courses.size() >= 5) {
+            throw new IllegalStateException("A semester can have a maximum of 5 courses.");
+        }
+        Course course = courseService.getCourseById(courseId);
+        courses.add(course);
+        semester.setCourses(courses);
+        return semesterRepository.save(semester);
+    }
+
 
     @Override
     public void deleteSemester(Long id) {

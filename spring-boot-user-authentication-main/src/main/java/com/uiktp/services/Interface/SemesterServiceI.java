@@ -12,5 +12,7 @@ public interface SemesterServiceI {
     Optional<Semester> getSemesterById(Long id);
     Semester addSemester(Semester semester);
     Semester updateSemester(Long id, Semester semester);
+    Semester addCourseToSemester(Long id, Long courseId);
+
     void deleteSemester(Long id);
 }

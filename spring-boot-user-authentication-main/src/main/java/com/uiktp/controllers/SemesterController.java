@@ -19,6 +19,7 @@ public class SemesterController {
 
     @Autowired
     private SemesterService semesterService;
+
     @Autowired
     private UserRepository userRepository;
     private SemesterRepository semesterRepository;
@@ -54,6 +55,11 @@ public class SemesterController {
         Semester semester = semesterRepository.findById(semesterId).orElseThrow(() -> new RuntimeException("Semester not found"));
         semester.setStudent(student);
         return semesterRepository.save(semester);
+    }
+
+    @PostMapping("/addCourse/{semesterId}")
+    public Semester addCourseToSemester(@PathVariable Long semesterId, @RequestParam Long courseId){
+        return semesterService.addCourseToSemester(semesterId,courseId);
     }
 
 }
