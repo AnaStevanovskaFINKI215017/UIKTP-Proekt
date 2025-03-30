@@ -1,0 +1,150 @@
+td button svg {
+    vertical-align: middle;
+  }
+  
+  .admin-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #f4e9e9;
+    border-radius: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .upload-section,
+  .subject-form {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-section label,
+  .subject-form label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input[type="file"],
+  input[type="text"] {
+    padding: 12px 16px;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: white;
+  }
+  
+  textarea {
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: vertical;
+  }
+  
+  h2 {
+    margin-top: 40px;
+    font-size: 22px;
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  button,
+  td button {
+    padding: 10px 20px;
+    background-color: #6e1e24 !important;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(110, 30, 36, 0.2);
+    font-weight: 500;
+  }
+  
+  button:hover,
+  td button:hover {
+    background-color: #a12f36 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(110, 30, 36, 0.3);
+  }
+  
+  .edit-btn {
+    background-color: #6e1e24;
+    padding: 6px 10px;
+    border-radius: 9999px;
+    margin-right: 5px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #a12f36;
+  }
+  
+  .delete-btn {
+    background-color: #b80000;
+    padding: 6px 10px;
+    border-radius: 9999px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #e00000;
+  }
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #e0d3d3;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .admin-container {
+      padding: 20px;
+    }
+  
+    input[type="text"],
+    input[type="file"] {
+      max-width: 100%;
+    }
+  
+    table, thead, tbody, th, td, tr {
+      font-size: 12px;
+    }
+  }
+  

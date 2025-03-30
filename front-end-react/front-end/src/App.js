@@ -1,20 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import routing components
-import LoginPage from './components/LoginPage';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import Admin from './components/Admin';
+import HomePage from './components/HomePage';  // Don't forget to import the HomePage component
 import SemesterEnrollment from './components/SemesterEnrollment';
 
 function App() {
-  return (
-      <Router>
-          <div className="App">
-              {/* Define routes for your app */}
-              <Routes>
-                  <Route path="/" element={<LoginPage />} />
-                  <Route path="/semester-enrollment" element={<SemesterEnrollment />} />
-              </Routes>
-          </div>
-      </Router>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />  {/* HomePage as the default route */}
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                    <Route path="/admin" element={<Admin />} />
+                    <Route path="/semester-enrollment" element={<SemesterEnrollment />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

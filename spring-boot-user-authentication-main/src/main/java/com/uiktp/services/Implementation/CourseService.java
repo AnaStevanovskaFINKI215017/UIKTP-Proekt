@@ -21,8 +21,8 @@ public class CourseService implements CourseServiceI {
     }
 
     @Override
-    public Optional<Course> getCourseById(Long id) {
-        return courseRepository.findById(id);
+    public Course getCourseById(Long id) {
+        return courseRepository.findById(id).orElseThrow();
     }
 
     @Override
