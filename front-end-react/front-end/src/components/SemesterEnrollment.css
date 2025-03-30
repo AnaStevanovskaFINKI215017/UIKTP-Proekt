@@ -1,0 +1,116 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background */
+    border-bottom: 1px solid #ddd; /* Light border */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333333; /* Dark gray text */
+    margin-right: 15px;
+}
+
+.navbar a:hover {
+    color: #800000; /* Dark red hover effect */
+}
+
+.navbar .logout-button {
+    background-color: #800000; /* Dark red */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar .logout-button:hover {
+    background-color: #a00000; /* Slightly brighter red */
+}
+
+/* Page Container */
+.semester-enrollment {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.semester-enrollment h2 {
+    text-align: center;
+    color: #333333; /* Dark gray text */
+}
+
+/* Subject List Section */
+.subject-list {
+    background-color: #f8e8e8; /* Light pinkish background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.subject-list p {
+    font-size: 16px;
+    color: #333333; /* Dark gray text */
+}
+
+.subject-list ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding-left: 0; /* Remove padding from list items */
+}
+
+.subject-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.subject-button {
+    background-color: #800000; /* Dark red button background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px; /* Add padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.subject-button:hover {
+    background-color: #a00000; /* Slightly brighter red on hover */
+}
+
+/* Actions Section Styling */
+.actions {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons section */
+}
+
+.btn {
+    background-color: #800000; /* Dark red button background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px; /* Add padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn:hover {
+    background-color: #a00000; /* Slightly brighter red on hover */
+}
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons section */
+}
+
