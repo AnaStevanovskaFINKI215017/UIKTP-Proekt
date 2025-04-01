@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^4.3.0",
+    "axios": "^1.8.4",
     "cra-template-tailwindcss": "4.0.1",
     "lucide-react": "^0.485.0",
     "react": "^18.3.1",

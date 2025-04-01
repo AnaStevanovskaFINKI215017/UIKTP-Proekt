@@ -3,6 +3,7 @@ package com.uiktp.controllers;
 import com.uiktp.entities.users.dtos.AuthenticationDTO;
 import com.uiktp.entities.users.dtos.RegisterDTO;
 import com.uiktp.entities.users.User;
+import com.uiktp.exceptions.InvalidArgumentsException;
 import com.uiktp.security.TokenService;
 import com.uiktp.repositories.UserRepository;
 import com.uiktp.services.Implementation.AuthenticationService;
@@ -10,15 +11,19 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @Controller
 @RequestMapping( "/auth")
 public class AuthenticationController {
@@ -30,7 +35,7 @@ public class AuthenticationController {
     @Autowired
     private TokenService tokenService;
     @Autowired
-    private AuthenticationService authService;
+    private AuthenticationService authenticationService;
 
     @GetMapping("/home")
     public String homePage(Model model, HttpServletRequest request) {
@@ -103,28 +108,19 @@ public class AuthenticationController {
         }
         return "redirect:/auth/login?logout=true";
     }
-    @GetMapping("/register")
-    public String showRegisterPage() {
-        return "register";
-    }
 
     @PostMapping("/register")
-    public String processRegister(RegisterDTO data) {
-//        if (this.userRepository.findByEmail(data.email()) != null) {
-//            return "redirect:/auth/register?error=Email already exists";
-//        }
-
-        Optional<User> existingUser = this.userRepository.findByEmail(data.email());
-
-        if (existingUser.isPresent()) {
-            return "redirect:/auth/register?error=Email already exists";
+    public ResponseEntity<?> register(@Validated @RequestBody RegisterDTO registerDTO) {
+        try {
+            authenticationService.register(registerDTO);
+            return ResponseEntity.ok().body("User registered successfully.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email is already taken.");
+        } catch (InvalidArgumentsException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid input data.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred.");
         }
-
-        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User user = new User(data.name(), data.email(), encryptedPassword, data.role(), data.index());
-
-        this.userRepository.save(user);
-
-        return "redirect:/auth/login";
     }
+
 }
