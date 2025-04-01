@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.app-container {
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+}
+
+.logout-button {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Main Content Styling */
+.semester-enrollment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.semester-enrollment h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.subject-list-container {
+    width: 100%;
+    display: flex; /* Display list and buttons side by side */
+    justify-content: space-between; /* Create space between the two sections */
+    gap: 30px; /* Provide visual breathing room */
+    align-items: center; /* Align both sections vertically */
+}
+
+/* Subject List Styling */
+.subject-list {
+    background-color: #f8e8e8;
+    padding: 20px;
+    border-radius: 8px;
+    width: 65%; /* Adjust width for balanced layout */
+    text-align: left; /* Align text for better readability */
+}
+
+.subject-list p {
+    margin-bottom: 15px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.numbered-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+.item-number {
+    background-color: #800000;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.item-content {
+    flex: 1;
+    color: #555555;
+}
+
+/* Actions Section Styling */
+.actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons vertically */
+    width: 30%; /* Adjust width for balanced layout */
+}
+
+/* Button Styling */
+.btn {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px; /* Slightly rounded buttons for elegance */
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #a00000;
+}
+
+/* Hover Effect for Subject List Items */
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+}
+
+.list-item:hover {
+    transform: translateY(-2px); /* Slightly lift the item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+    cursor: pointer; /* Change the cursor to indicate it's interactive */
+}
