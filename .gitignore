@@ -1,0 +1,13 @@
+# Ignore IDE folders (for IntelliJ IDEA, etc.)
+.idea/
+*.iml
+
+# Ignore build directories
+target/
+
+# Ignore compiled class files
+*.class
+
+# Ignore logs and temp files
+*.log
+*.tmp
