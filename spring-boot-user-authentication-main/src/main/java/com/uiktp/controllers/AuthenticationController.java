@@ -21,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -64,31 +65,62 @@ public class AuthenticationController {
     }
 
 //    @PostMapping("/login")
-//    public String login(AuthenticationDTO data, RedirectAttributes redirectAttributes) {
+//    public String login(@ModelAttribute AuthenticationDTO data, HttpServletResponse response) {
 //        var authenticationToken = new UsernamePasswordAuthenticationToken(data.email(), data.password());
 //        var authentication = authenticationManager.authenticate(authenticationToken);
 //
 //        var user = (User) authentication.getPrincipal();
 //        var token = tokenService.generateToken(user);
 //
-//        redirectAttributes.addFlashAttribute("token", token);
+//        Cookie jwtCookie = new Cookie("jwt", token);
+//        jwtCookie.setHttpOnly(true);
+//        jwtCookie.setPath("/");
+//        response.addCookie(jwtCookie);
 //        return "redirect:/auth/home";
 //    }
 
+//    @PostMapping("/login")
+//    public ResponseEntity<?> login(@RequestBody AuthenticationDTO data, HttpServletResponse response) {
+//        try {
+//            var authenticationToken = new UsernamePasswordAuthenticationToken(data.email(), data.password());
+//            var authentication = authenticationManager.authenticate(authenticationToken);
+//
+//            var user = (User) authentication.getPrincipal();
+//            var token = tokenService.generateToken(user);
+//
+//            Cookie jwtCookie = new Cookie("jwt", token);
+//            jwtCookie.setHttpOnly(true);
+//            jwtCookie.setPath("/");
+//            response.addCookie(jwtCookie);
+//
+//            return ResponseEntity.ok().body(Map.of("token", token));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
+//        }
+//    }
+
     @PostMapping("/login")
-    public String login(@ModelAttribute AuthenticationDTO data, HttpServletResponse response) {
-        var authenticationToken = new UsernamePasswordAuthenticationToken(data.email(), data.password());
-        var authentication = authenticationManager.authenticate(authenticationToken);
+    public ResponseEntity<?> login(@RequestBody AuthenticationDTO data, HttpServletResponse response) {
+        try {
+            var authenticationToken = new UsernamePasswordAuthenticationToken(data.email(), data.password());
+            var authentication = authenticationManager.authenticate(authenticationToken);
 
-        var user = (User) authentication.getPrincipal();
-        var token = tokenService.generateToken(user);
+            var user = (User) authentication.getPrincipal();
+            var token = tokenService.generateToken(user);
 
-        Cookie jwtCookie = new Cookie("jwt", token);
-        jwtCookie.setHttpOnly(true);
-        jwtCookie.setPath("/");
-        response.addCookie(jwtCookie);
-        return "redirect:/auth/home";
+            Cookie jwtCookie = new Cookie("jwt", token);
+            jwtCookie.setHttpOnly(true);
+            jwtCookie.setPath("/");
+            response.addCookie(jwtCookie);
+
+            // Return both token and email
+            return ResponseEntity.ok().body(Map.of("token", token, "email", user.getEmail()));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
+        }
     }
+
+
     @PostMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();

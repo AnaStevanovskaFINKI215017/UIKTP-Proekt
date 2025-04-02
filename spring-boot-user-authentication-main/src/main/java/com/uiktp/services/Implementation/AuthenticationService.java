@@ -11,8 +11,10 @@ import com.uiktp.services.Interface.AuthenticationServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AuthenticationService implements AuthenticationServiceI {
@@ -44,6 +46,7 @@ public class AuthenticationService implements AuthenticationServiceI {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
     }
 
+    @Transactional
     @Override
     public User register(RegisterDTO registerDTO) {
         if (registerDTO.getEmail() == null || registerDTO.getEmail().isEmpty() || registerDTO.getPassword() == null || registerDTO.getPassword().isEmpty() || registerDTO.getName() == null || registerDTO.getName().isEmpty()) {
@@ -53,11 +56,11 @@ public class AuthenticationService implements AuthenticationServiceI {
             throw new IllegalArgumentException("Email is already taken.");
         }
 
-
+        String encodedPassword = new BCryptPasswordEncoder().encode(registerDTO.getPassword());
         User newUser = new User();
         newUser.setName(registerDTO.getName());
         newUser.setEmail(registerDTO.getEmail());
-        newUser.setPassword(registerDTO.getPassword());
+        newUser.setPassword(encodedPassword);
         newUser.setIndex("213089");
         newUser.setRole(UserRole.USER);
         return userRepository.save(newUser);

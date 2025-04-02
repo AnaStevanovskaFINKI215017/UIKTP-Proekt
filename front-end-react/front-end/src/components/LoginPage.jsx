@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
+import axios from "axios";
+//axios.defaults.withCredentials = true;
+
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
-    const navigate = useNavigate(); // ✅ Define navigate
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,14 +23,27 @@ const LoginPage = () => {
 
         try {
             setIsLoading(true);
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            console.log("Login attempt with:", { email });
+
+            const response = await axios.post("http://localhost:8080/auth/login", {
+                email,
+                password,
+            });
+
+            if (response.status === 200) {
+                const { token, email } = response.data;
+
+                localStorage.setItem("token", token);
+                localStorage.setItem("email", email);
+                navigate("/");
+            }
         } catch (err) {
+            console.error(err);
             setError("Invalid email or password. Please try again.");
         } finally {
             setIsLoading(false);
         }
     };
+
 
     return (
         <div className="login-container">
@@ -50,9 +66,7 @@ const LoginPage = () => {
                         required
                     />
                     <div className="buttons"></div>
-                    <button type="submit" className="btn" disabled={isLoading}>
-                        {isLoading ? "Logging in..." : "Log In"}
-                    </button>
+                    <button type="submit">Log In</button>
                     <button className="btn" onClick={() => navigate("/register")}>
                         New User? Register Now
                     </button>
