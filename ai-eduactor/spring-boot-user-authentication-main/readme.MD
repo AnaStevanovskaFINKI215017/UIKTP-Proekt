@@ -1,4 +1,4 @@
-# 📚 Course Management Backend API
+# 📚 AI Educator Backend API
 
 A Spring Boot REST API for managing AI Educator App backend services. Backed by PostgreSQL and easily integratable with a frontend.
 
