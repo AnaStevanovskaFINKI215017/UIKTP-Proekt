@@ -67,8 +67,8 @@ const LoginPage = () => {
                         required
                     />
                     <div className="buttons"></div>
-                    <button type="submit">Log In</button>
-                    <button className="btn" onClick={() => navigate("/register")}>
+                    <button className='loginFormBtn' type="submit">Log In</button>
+                    <button className="loginFormBtn" onClick={() => navigate("/register")}>
                         New User? Register Now
                     </button>
                 </form>

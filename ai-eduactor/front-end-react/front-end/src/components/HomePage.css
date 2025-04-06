@@ -23,8 +23,9 @@ h1 {
 .homepage-buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Spacing between buttons */
+    gap: 30px; /* Increased gap between buttons */
     align-items: center;
+    margin-right: 10px;
 }
 
 .btn {
