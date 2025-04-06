@@ -52,8 +52,8 @@ h1 {
     align-content: center;
 }
 /* Unified button styles */
-.btn {
-    background-color: lightgray;
+.loginFormBtn {
+    background-color: lightgray !important;
     color: black;
     padding: 12px;
     border: none;

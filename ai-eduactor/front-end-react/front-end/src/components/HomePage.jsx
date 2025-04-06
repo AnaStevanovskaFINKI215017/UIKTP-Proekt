@@ -1,4 +1,6 @@
 import React from 'react';
+import './HomePage.css'; // Import the CSS file
+
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const HomePage = () => {
