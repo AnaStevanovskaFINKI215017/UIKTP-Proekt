@@ -19,14 +19,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final UserRepository userRepository;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
-
-    private final TokenService tokenService;
-
-    public AuthenticationServiceImpl(UserRepository userRepository, TokenService tokenService) {
+    public AuthenticationServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.tokenService = tokenService;
     }
 
     @Override
@@ -37,10 +31,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return userRepository.findByEmail(email).orElseThrow(InvalidUserCredentialsException::new);
     }
 
-    //    @Override
-    //    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-    //        return userRepository.findByEmail(email);
-    //    }
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email)

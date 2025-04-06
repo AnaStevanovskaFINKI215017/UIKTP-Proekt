@@ -2,7 +2,6 @@ package com.uiktp.web.controller;
 
 import com.uiktp.model.FlashCard;
 import com.uiktp.service.Interface.FlashCardService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

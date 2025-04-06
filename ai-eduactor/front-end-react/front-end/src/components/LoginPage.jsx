@@ -30,10 +30,11 @@ const LoginPage = () => {
             });
 
             if (response.status === 200) {
-                const { token, email } = response.data;
+                const { token, email, name } = response.data;
 
                 localStorage.setItem("token", token);
                 localStorage.setItem("email", email);
+                localStorage.setItem("name", name);
                 navigate("/");
             }
         } catch (err) {

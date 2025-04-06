@@ -27,14 +27,15 @@ import java.util.Map;
 @RequestMapping( "/auth")
 public class AuthenticationController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private TokenService tokenService;
-    @Autowired
-    private AuthenticationService authenticationService;
+    private final AuthenticationManager authenticationManager;
+    private final TokenService tokenService;
+    private final AuthenticationService authenticationService;
+
+    public AuthenticationController(AuthenticationManager authenticationManager, TokenService tokenService, AuthenticationService authenticationService) {
+        this.authenticationManager = authenticationManager;
+        this.tokenService = tokenService;
+        this.authenticationService = authenticationService;
+    }
 
     @GetMapping("/home")
     public String homePage(Model model, HttpServletRequest request) {
@@ -112,7 +113,7 @@ public class AuthenticationController {
             response.addCookie(jwtCookie);
 
             // Return both token and email
-            return ResponseEntity.ok().body(Map.of("token", token, "email", user.getEmail()));
+            return ResponseEntity.ok().body(Map.of("token", token, "email", user.getEmail(), "name", user.getName()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
         }

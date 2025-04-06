@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 
 const HomePage = () => {
     const navigate = useNavigate(); // Initialize navigate function
-    const email = localStorage.getItem("email");
+    const name = localStorage.getItem("name");
 
     const handleNavigate = (path) => {
         navigate(path); // Navigate to the provided path
@@ -12,7 +12,7 @@ const HomePage = () => {
     return (
         <div className="homepage-container">
             <header>
-                <h1>Welcome to Our Website {email}!</h1>
+                <h1>Welcome to Our Website {name}!</h1>
             </header>
 
             <div className="homepage-buttons">

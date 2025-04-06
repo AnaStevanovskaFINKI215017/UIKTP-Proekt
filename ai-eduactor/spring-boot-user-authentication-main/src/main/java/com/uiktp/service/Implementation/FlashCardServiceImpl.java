@@ -11,8 +11,12 @@ import java.util.Optional;
 
 @Service
 public class FlashCardServiceImpl implements FlashCardService {
-    @Autowired
-    private FlashCardRepository flashCardRepository;
+
+    private final FlashCardRepository flashCardRepository;
+
+    public FlashCardServiceImpl(FlashCardRepository flashCardRepository) {
+        this.flashCardRepository = flashCardRepository;
+    }
 
     @Override
     public List<FlashCard> getAllFlashCards() {
