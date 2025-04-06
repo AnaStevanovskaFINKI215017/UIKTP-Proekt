@@ -1,6 +1,7 @@
 package com.uiktp.service.Implementation;
 
 import com.uiktp.model.Course;
+import com.uiktp.model.dtos.CreateCourseDto;
 import com.uiktp.repository.CourseRepository;
 import com.uiktp.service.Interface.CourseService;
 import org.apache.poi.ss.usermodel.Row;
@@ -37,7 +38,8 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course addCourse(Course course) {
+    public Course addCourse(CreateCourseDto dto) {
+        Course course = new Course(dto.getTitle(), dto.getDescription());
         return courseRepository.save(course);
     }
 

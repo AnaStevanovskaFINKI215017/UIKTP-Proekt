@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-export const API_URL = 'http://localhost:8080'; 
-
-
+const AUTH_BASE_URL = 'http://localhost:8080/auth';
+export const API_URL = 'http://localhost:8080/api';
 
 export const login = async (email, password) => {
   try {
-    const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+    const response = await axios.post(`${AUTH_BASE_URL}/login`, { email, password });
     return response.data;
   } catch (error) {
     console.error('Error during login:', error);
@@ -16,7 +15,7 @@ export const login = async (email, password) => {
 
 export const registerUser = async (userData) => {
   try {
-      const response = await axios.post(`${API_URL}/auth/register`, userData);
+      const response = await axios.post(`${AUTH_BASE_URL}/register`, userData);
       return response.data;
   } catch (error) {
       console.error("Error during registration:", error);
@@ -26,7 +25,7 @@ export const registerUser = async (userData) => {
 
 export const logout = async () => {
   try {
-    const response = await axios.post(`${API_URL}/auth/logout`);
+    const response = await axios.post(`${AUTH_BASE_URL}/logout`);
     return response.data;
   } catch (error) {
     console.error('Error during logout:', error);
@@ -55,22 +54,43 @@ export const createCourse = async (courseData) => {
   }
 };
 
-export const exportPDF = async () => {
+export const updateCourse = async (id, courseData) => {
   try {
-    const response = await axios.get(`${API_URL}/export/pdf`, {
-      responseType: 'arraybuffer',
-    });
-
-    const blob = new Blob([response.data], { type: 'application/pdf' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'data.pdf';
-    link.click();
+    const response = await axios.put(`${API_URL}/courses/${id}`, courseData);
+    return response.data;
   } catch (error) {
-    console.error('Error exporting PDF:', error);
+    console.error('Error updating course:', error);
     throw error;
   }
 };
+
+export const deleteCourse = async (id) => {
+  try {
+    console.log("Attempting to delete course with ID:", id);
+    const response = await axios.delete(`${API_URL}/courses/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting course:', error);
+    throw error;
+  }
+};
+
+// export const exportPDF = async () => {
+//   try {
+//     const response = await axios.get(`${API_URL}/export/pdf`, {
+//       responseType: 'arraybuffer',
+//     });
+//
+//     const blob = new Blob([response.data], { type: 'application/pdf' });
+//     const link = document.createElement('a');
+//     link.href = URL.createObjectURL(blob);
+//     link.download = 'data.pdf';
+//     link.click();
+//   } catch (error) {
+//     console.error('Error exporting PDF:', error);
+//     throw error;
+//   }
+// };
 
 export const uploadFile = async (file) => {
   try {
@@ -83,6 +103,20 @@ export const uploadFile = async (file) => {
       },
     });
     
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading file:', error);
+    throw error;
+  }
+};
+
+export const importCourses = async (formData) => {
+  try {
+    const response = await axios.post(`${API_URL}/files/importCourses`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return response.data;
   } catch (error) {
     console.error('Error uploading file:', error);

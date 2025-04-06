@@ -1,6 +1,7 @@
 package com.uiktp.web.controller;
 
 import com.uiktp.model.Course;
+import com.uiktp.model.dtos.CreateCourseDto;
 import com.uiktp.service.Interface.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/courses")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CourseController {
 
     private final CourseService courseService;
@@ -29,8 +31,8 @@ public class CourseController {
     }
 
     @PostMapping
-    public Course createCourse(@RequestBody Course course) {
-        return courseService.addCourse(course);
+    public Course createCourse(@RequestBody CreateCourseDto dto) {
+        return courseService.addCourse(dto);
     }
 
     @PutMapping("/{id}")

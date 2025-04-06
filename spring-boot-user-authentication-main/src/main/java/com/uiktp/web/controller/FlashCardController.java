@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/flashcards")
+@CrossOrigin(origins = "http://localhost:3000")
 public class FlashCardController {
 
     private final FlashCardService flashCardService;

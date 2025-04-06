@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/semesters")
+@CrossOrigin(origins = "http://localhost:3000")
 public class SemesterController {
 
     private final SemesterService semesterService;

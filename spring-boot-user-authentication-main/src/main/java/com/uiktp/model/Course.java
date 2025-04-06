@@ -23,4 +23,9 @@ public class Course {
 
     @ManyToMany(mappedBy = "courses")
     private List<Semester> semesters;
+
+    public Course(String title, String description){
+        this.title = title;
+        this.description = description;
+    }
 }

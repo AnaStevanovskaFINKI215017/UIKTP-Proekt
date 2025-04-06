@@ -1,6 +1,7 @@
 package com.uiktp.service.Interface;
 
 import com.uiktp.model.Course;
+import com.uiktp.model.dtos.CreateCourseDto;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ public interface CourseService {
     //CRUD
     List<Course> getAllCourses();
     Course getCourseById(Long id);
-    Course addCourse(Course course);
+    Course addCourse(CreateCourseDto dto);
     Course updateCourse(Long id, Course course);
     void deleteCourse(Long id);
 
