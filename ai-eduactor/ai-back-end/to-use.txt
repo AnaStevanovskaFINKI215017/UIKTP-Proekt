@@ -1,0 +1,5 @@
+1. create a huggingface account and create an API TOKEN
+2. in the project folder create a file named {.env} and inside type in: `HUGGINGFACEHUB_API_TOKEN="hf_...your token here`
+3. open modules.ipynb and run only the first cell to install modules
+4. open app.py and run the api
+5. navigate to localhost:8000/docs
