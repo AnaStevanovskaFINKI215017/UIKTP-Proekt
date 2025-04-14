@@ -1,0 +1,40 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    animation: fadeIn 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.success {
+    border-left: 5px solid #28a745;
+    color: #28a745;
+}
+
+.notification.error {
+    border-left: 5px solid #dc3545;
+    color: #dc3545;
+}
+
+.notification svg {
+    margin-right: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

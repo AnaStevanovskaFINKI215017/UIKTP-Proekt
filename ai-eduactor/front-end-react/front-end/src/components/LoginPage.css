@@ -1,0 +1,80 @@
+/* LoginPage.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+}
+
+.login-box {
+    width: 500px;
+    padding: 30px;
+    background: #601010; /* Dark Red */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.login-form input {
+    padding: 12px;
+    margin-bottom: 20px; /* Increased spacing */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: calc(100% - 24px); /* Fix width */
+    background: white;
+}
+.buttons{
+    margin: 30px;
+    text-align: center;
+    align-content: center;
+}
+/* Unified button styles */
+.loginFormBtn {
+    background-color: lightgray !important;
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px; /* Add spacing */
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #bbb;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.footer{
+    margin-top: 80px;
+}
