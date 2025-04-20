@@ -1,0 +1,89 @@
+.semester-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.semester-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.semester-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.semester-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.semester-name {
+    font-size: 1.1rem;
+}
+
+.icon-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #333;
+    transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: scale(1.2);
+    color: #7b1e1e;
+}
+
+.create-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 300px; /* optional */
+}
+
+
+.btn-create {
+    background-color: #7b1e1e;
+    color: white;
+    padding: 1rem 1.6rem;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-create:hover {
+    background-color: #5c1616;
+}
+
+@media (max-width: 768px) {
+    .semester-container {
+        grid-template-columns: 1fr;
+    }
+
+    .create-box {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
