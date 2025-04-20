@@ -9,7 +9,7 @@ import {
     removeCourseFromFavorites,
     submitSubjectReview
 } from '../repository/api';
-import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import StarRatings from 'react-star-ratings';
 
 const CourseReviews = () => {
