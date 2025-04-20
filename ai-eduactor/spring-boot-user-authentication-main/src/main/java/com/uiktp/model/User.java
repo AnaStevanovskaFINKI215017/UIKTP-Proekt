@@ -1,5 +1,6 @@
 package com.uiktp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.uiktp.model.enumerations.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,10 +37,15 @@ public class User implements UserDetails {
     private String password;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.ORDINAL)
     private UserRole role;
 
     @Column(nullable = false)
     private String index;
+
+    @ManyToMany(mappedBy = "likedBy")
+    @JsonBackReference
+    private List<Course> favoriteCourses;
     public User(String name, String email, String password, UserRole role, String index) {
         this.name = name;
         this.email = email;

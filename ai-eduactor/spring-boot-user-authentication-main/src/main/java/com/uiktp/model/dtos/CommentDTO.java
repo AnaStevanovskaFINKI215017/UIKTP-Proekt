@@ -8,8 +8,7 @@ import lombok.Setter;
 @Setter
 public class CommentDTO {
     private String commentBody;
-    private Long userId;
-    private Long courseId;
+    private String studentEmail;
     public CommentDTO() {}
 
 }

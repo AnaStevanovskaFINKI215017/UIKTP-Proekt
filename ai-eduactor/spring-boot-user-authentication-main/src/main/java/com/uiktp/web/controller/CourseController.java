@@ -3,7 +3,6 @@ package com.uiktp.web.controller;
 import com.uiktp.model.Course;
 import com.uiktp.model.dtos.CreateCourseDto;
 import com.uiktp.service.Interface.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,5 +43,21 @@ public class CourseController {
     public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}/favorite/add")
+    public ResponseEntity<Course> markAsFavorite(@PathVariable Long id, @RequestParam String email){
+        return  ResponseEntity.ok(courseService.markAsFavorite(id, email));
+    }
+
+    @PutMapping("{id}/favorite/remove")
+    public ResponseEntity<Void> removeFromFavorites(@PathVariable Long id, @RequestParam String email){
+        courseService.removeCourseFromFavorites(id, email);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/favorites")
+    public ResponseEntity<List<Course>> getStudentFavorites(@RequestParam String email){
+        return ResponseEntity.ok(courseService.getStudentFavorites(email));
     }
 }

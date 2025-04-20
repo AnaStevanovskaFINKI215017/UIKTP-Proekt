@@ -1,4 +1,4 @@
-package com.uiktp.model.exceptions;
+package com.uiktp.model.exceptions.credentials;
 
 public class InvalidUserCredentialsException extends RuntimeException {
 

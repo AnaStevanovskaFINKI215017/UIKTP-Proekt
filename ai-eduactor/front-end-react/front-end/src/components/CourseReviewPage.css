@@ -1,0 +1,228 @@
+.course-review-container {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.back-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}
+
+.review-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.review-section h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.average-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.average-rating p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.rating-value {
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+.stars-display {
+    display: inline-flex;
+    margin-left: 0.5rem;
+}
+
+.new-review-form {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.new-review-form h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.rating-selection {
+    margin-bottom: 1.5rem;
+}
+
+.rating-selection label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.stars-container {
+    display: flex;
+}
+
+.feedback-container {
+    margin-bottom: 1.5rem;
+}
+
+.feedback-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    background-color: #388e3c;
+}
+
+.submit-btn:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.reviews-list {
+    margin-top: 2rem;
+}
+
+.reviews-list h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.review-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-content {
+    margin: 0 0 0.5rem 0;
+}
+
+.review-date {
+    color: #757575;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.no-reviews {
+    color: #757575;
+    font-style: italic;
+}
+
+.forms-container {
+    display: flex;
+    gap: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-card {
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.25rem;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+.review-body {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.comment-buttons{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+}

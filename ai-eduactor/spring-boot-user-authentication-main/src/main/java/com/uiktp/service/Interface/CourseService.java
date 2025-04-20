@@ -19,4 +19,7 @@ public interface CourseService {
     //OTHER
     void importCoursesFromCSV(MultipartFile file) throws IOException;
     void importCoursesFromExcel(MultipartFile file) throws IOException;
+    Course markAsFavorite(Long courseId, String email);
+    void removeCourseFromFavorites(Long courseId, String email);
+    List<Course> getStudentFavorites(String email);
 }

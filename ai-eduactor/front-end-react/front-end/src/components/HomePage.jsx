@@ -52,7 +52,7 @@ const HomePage = () => {
 <div className="feature-buttons">
     <button onClick={() => handleNavigate('/semester-planning')} className="btn feature-btn">Semester Planning</button>
     <button onClick={() => handleNavigate('/flashcards')} className="btn feature-btn">Flash Cards AI Generator</button>
-    <button onClick={() => handleNavigate('/subject-reviews')} className="btn feature-btn">Subjects Comments and Ratings</button>
+    <button onClick={() => handleNavigate('/course-reviews')} className="btn feature-btn">Subjects Comments and Ratings</button>
 </div>
 
 

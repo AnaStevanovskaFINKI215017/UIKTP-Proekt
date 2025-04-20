@@ -2,7 +2,7 @@ package com.uiktp.service.Implementation;
 
 import com.uiktp.model.Course;
 import com.uiktp.model.Semester;
-import com.uiktp.model.exceptions.SemesterNotFoundException;
+import com.uiktp.model.exceptions.general.ResourceNotFoundException;
 import com.uiktp.repository.SemesterRepository;
 import com.uiktp.service.Interface.SemesterService;
 import org.springframework.stereotype.Service;
@@ -50,7 +50,7 @@ public class SemesterServiceImpl implements SemesterService {
     @Override
     public Semester addCourseToSemester(Long id, Long courseId) {
 
-        Semester semester = semesterRepository.findById(id).orElseThrow(SemesterNotFoundException::new);
+        Semester semester = semesterRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(Semester.class, id.toString()));
         List<Course> courses = semester.getCourses();
         if (courses.size() >= 5) {
             throw new IllegalStateException("A semester can have a maximum of 5 courses.");
