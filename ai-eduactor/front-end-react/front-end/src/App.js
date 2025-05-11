@@ -28,8 +28,8 @@ function App() {
                     <Route path="/subject-recommendation" element={<SubjectRecommendation />} />
                     <Route path="/course-reviews" element={<CourseReviews />} />
                     <Route path="/course/:courseId/reviews" element={<CourseReviewPage />} />
-                    <Route path="/flash-cards" element={<FlashcardsPage />} />
-                    <Route path="flashcardactions" element={<FlashcardActions />} /> {/* Updated to use element prop */}
+                    <Route path="/flashcards" element={<FlashcardsPage />} />
+                    <Route path="flashcardactions" element={<FlashcardActions />} />
                     <Route path="/course/:courseName" element={<CoursePage />} />
                     {/* <Route path="/flashcard-game/:courseId" element={<FlashcardGame />} />
                     <Route path="/flashcard-game/demo" element={<FlashcardGame demo={true} />} /> */}

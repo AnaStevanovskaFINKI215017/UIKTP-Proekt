@@ -31,10 +31,11 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
-        const { token, email, name } = response.data;
+        const { token, email, name, id } = response.data;
         localStorage.setItem("token", token);
         localStorage.setItem("email", email);
         localStorage.setItem("name", name);
+        localStorage.setItem("userId", id);
         navigate("/"); // Redirect after successful login
       }
     } catch (err) {

@@ -52,7 +52,7 @@ const CustomNavbar = () => {
                 <Nav className="me-auto">
                     <Nav.Link onClick={() => handleNavigate('/')}>Home</Nav.Link>
                     <Nav.Link onClick={() => handleNavigate('/semester-planning')}>Semesters</Nav.Link>
-                    <Nav.Link onClick={() => handleNavigate('/flashcards/game/1')}>Flash Cards</Nav.Link>
+                    <Nav.Link onClick={() => handleNavigate('/flashcards')}>Flash Cards</Nav.Link>
                     <Nav.Link onClick={() => handleNavigate('/subject-recommendation')}>Subject Recommendation</Nav.Link>
                     <Nav.Link onClick={() => handleNavigate('/course-reviews')}>Reviews</Nav.Link>
                 </Nav>

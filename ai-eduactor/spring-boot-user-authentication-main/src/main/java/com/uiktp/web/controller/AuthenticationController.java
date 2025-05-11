@@ -59,7 +59,12 @@ public class AuthenticationController {
             jwtCookie.setPath("/");
             response.addCookie(jwtCookie);
 
-            return ResponseEntity.ok().body(Map.of("token", token, "email", user.getEmail(), "name", user.getName()));
+            return ResponseEntity.ok().body(Map.of(
+                    "token", token,
+                    "id", user.getId(),
+                    "email", user.getEmail(),
+                    "name", user.getName()
+            ));
 
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
