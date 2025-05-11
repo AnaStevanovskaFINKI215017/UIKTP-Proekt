@@ -87,3 +87,9 @@
 .flashcards-button:hover {
   background-color: #5c1616;
 }
+
+.dropdown-section {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
