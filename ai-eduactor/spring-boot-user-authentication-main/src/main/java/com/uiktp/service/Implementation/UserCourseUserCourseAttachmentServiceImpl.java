@@ -162,6 +162,7 @@ public class UserCourseUserCourseAttachmentServiceImpl implements UserCourseAtta
                     AttachmentIDResponseDTO.class);
             return UUID.fromString(response.getBody().getId());
         } catch (Exception e) {
+            e.printStackTrace();
             throw new FileUploadFailureException();
         }
 

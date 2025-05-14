@@ -3,10 +3,7 @@ package com.uiktp.service.Implementation;
 import com.lowagie.text.*;
 import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfWriter;
-import com.uiktp.model.Course;
-import com.uiktp.model.FlashCard;
-import com.uiktp.model.User;
-import com.uiktp.model.UserCourseAttachment;
+import com.uiktp.model.*;
 import com.uiktp.model.dtos.FlashCardDTO;
 import com.uiktp.model.dtos.FlashCardResponseDTO;
 import com.uiktp.model.exceptions.custom.FlashCardGenerationException;
@@ -96,6 +93,40 @@ public class FlashCardServiceImpl implements FlashCardService {
             throw new RuntimeException("An error occurred while fetching flashcards for course ID: " + courseId, e);
         }
     }
+
+    @Override
+    public List<FlashCardDTO> getAllFlashCardsByAttachmentId(UUID attachmentId) {
+        if (attachmentId == null) {
+            throw new IllegalArgumentException("Attachment ID cannot be null.");
+        }
+
+        try {
+            UserCourseAttachment attachment = userCourseAttachmentService.getById(attachmentId);
+            List<FlashCard> flashCards = flashCardRepository.findAllByAttachment(attachment);
+
+            if (flashCards.isEmpty()) {
+                throw new NoSuchElementException("No flashcards found for attachment ID: " + attachmentId);
+            }
+
+            return flashCards.stream()
+                    .map(flashCard -> new FlashCardDTO(
+                            flashCard.getId(),
+                            flashCard.getQuestion(),
+                            flashCard.getAnswer(),
+                            flashCard.getAttachment().getCourse().getId(),
+                            flashCard.getAttachment().getCourse().getTitle()))
+                    .collect(Collectors.toList());
+
+        } catch (DataAccessException e) {
+            throw new RuntimeException("Database error while fetching flashcards for attachment ID: " + attachmentId, e);
+        } catch (PersistenceException e) {
+            throw new RuntimeException("Persistence error while fetching flashcards for attachment ID: " + attachmentId, e);
+        } catch (Exception e) {
+            throw new RuntimeException("An error occurred while fetching flashcards for attachment ID: " + attachmentId, e);
+        }
+    }
+
+
     @Override
     public Optional<FlashCard> getFlashCardById(Long id) {
         return flashCardRepository.findById(id);

@@ -17,6 +17,8 @@ public interface FlashCardService {
     List<FlashCard> getAllFlashCards();
     List<FlashCardDTO> getAllFlashCardsByCourseId(Long courseId);
 
+    List<FlashCardDTO> getAllFlashCardsByAttachmentId(UUID attachmentId);
+
     Optional<FlashCard> getFlashCardById(Long id);
 
     FlashCard addFlashCard(FlashCard flashCard);
