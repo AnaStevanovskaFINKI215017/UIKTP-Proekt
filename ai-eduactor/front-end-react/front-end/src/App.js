@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, {useEffect} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 // Authentication
 import LoginPage from "./components/Authentication/LoginPage";
 import RegisterPage from "./components/Authentication/RegisterPage";
@@ -47,18 +47,18 @@ function App() {
         <Router>
             <div className="App">
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/register" element={<RegisterPage />} />
-                    <Route path="/admin" element={<PrivateRoute element={<Admin />} />} />
-                    <Route path="/semester-planning" element={<PrivateRoute element={<SemesterPage />} />} />
-                    <Route path="/subject-recommendation" element={<PrivateRoute element={<SubjectRecommendation />} />} />
-                    <Route path="/course-reviews" element={<PrivateRoute element={<CourseHub />} />} />
-                    <Route path="/course/:courseId/reviews" element={<PrivateRoute element={<CourseReviewPage />} />} />
-                    <Route path="/flashcards" element={<PrivateRoute element={<FlashcardCourseSelector />} />} />
-                    <Route path="/course/:courseName" element={<PrivateRoute element={<CoursePage />} />} />
-                    <Route path="/flashcard-game/:courseId" element={<PrivateRoute element={<FlashCardGamePage />} />} />
-                    <Route path="/chatbot" element={<PrivateRoute element={<ChatBot />} />} />
+                    <Route path="/" element={<HomePage/>}/>
+                    <Route path="/login" element={<LoginPage/>}/>
+                    <Route path="/register" element={<RegisterPage/>}/>
+                    <Route path="/admin" element={<PrivateRoute element={<Admin/>}/>}/>
+                    <Route path="/semester-planning" element={<PrivateRoute element={<SemesterPage/>}/>}/>
+                    <Route path="/subject-recommendation" element={<PrivateRoute element={<SubjectRecommendation/>}/>}/>
+                    <Route path="/course-reviews" element={<PrivateRoute element={<CourseHub/>}/>}/>
+                    <Route path="/course/:courseId/reviews" element={<PrivateRoute element={<CourseReviewPage/>}/>}/>
+                    <Route path="/flashcards" element={<PrivateRoute element={<FlashcardCourseSelector/>}/>}/>
+                    <Route path="/course/:courseName" element={<PrivateRoute element={<CoursePage/>}/>}/>
+                    <Route path="/flashcard-game/:courseId" element={<PrivateRoute element={<FlashCardGamePage/>}/>}/>
+                    <Route path="/chatbot" element={<PrivateRoute element={<ChatBot/>}/>}/>
                 </Routes>
             </div>
         </Router>

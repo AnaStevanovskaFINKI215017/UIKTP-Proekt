@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Navbar, Container, Nav} from 'react-bootstrap';
+import {useNavigate, Link, useLocation} from 'react-router-dom';
 import './CustomNavbar.css';
-import { logout } from "../../services/api";
+import {logout} from "../../services/api";
 
 const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/semester-planning", label: "Semesters" },
-    { to: "/flashcards", label: "Flash Cards" },
-    { to: "/subject-recommendation", label: "Subject Recommendation" },
-    { to: "/course-reviews", label: "Course Hub" }
+    {to: "/", label: "Home"},
+    {to: "/semester-planning", label: "Semesters"},
+    {to: "/flashcards", label: "Flash Cards"},
+    {to: "/subject-recommendation", label: "Subject Recommendation"},
+    {to: "/course-reviews", label: "Course Hub"}
 ];
 
 const CustomNavbar = () => {
@@ -37,12 +37,13 @@ const CustomNavbar = () => {
     return (
         <Navbar bg="light" expand="lg" className="ai-navbar-shadow" sticky="top">
             <Container>
-                <Navbar.Brand as={Link} to="/" style={{ cursor: 'pointer', fontWeight: 700, fontSize: 22, letterSpacing: 1 }}>
+                <Navbar.Brand as={Link} to="/"
+                              style={{cursor: 'pointer', fontWeight: 700, fontSize: 22, letterSpacing: 1}}>
                     <span role="img" aria-label="AI">🤖</span> AI Educator
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="main-navbar-nav" />
+                <Navbar.Toggle aria-controls="main-navbar-nav"/>
                 <Navbar.Collapse id="main-navbar-nav">
-                    <Nav className="me-auto align-items-center" style={{ gap: '8px' }}>
+                    <Nav className="me-auto align-items-center" style={{gap: '8px'}}>
                         {navLinks.map(link => (
                             <Link
                                 key={link.to}
@@ -53,7 +54,7 @@ const CustomNavbar = () => {
                             </Link>
                         ))}
                     </Nav>
-                    <Nav className="align-items-center" style={{ gap: '8px' }}>
+                    <Nav className="align-items-center" style={{gap: '8px'}}>
                         {name ? (
                             <>
                                 <span className="ai-navbar-hello-msg">Hello, {name}!</span>

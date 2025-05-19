@@ -30,7 +30,7 @@
     padding: 0.75rem;
     background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .tab-buttons {
@@ -52,7 +52,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     letter-spacing: 0.5px;
 }
 
@@ -82,7 +82,7 @@
 
 .tab-buttons button:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(128,0,0,0.18);
+    box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.18);
 }
 
 .flashcards-info {
@@ -92,7 +92,7 @@
     margin: 1rem 0;
     border-radius: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
     animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -116,14 +116,14 @@
     margin: 0.75rem 0 1.5rem;
     font-weight: 700;
     font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(128,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .back-button:hover {
     background: linear-gradient(90deg, #600000 60%, #a83232 100%);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(128,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.15);
 }
 
 .new-review-form {
@@ -137,7 +137,7 @@
     border-radius: 16px;
     margin-bottom: 1.5rem;
     min-width: 320px;
-    box-shadow: 0 8px 32px rgba(128,0,0,0.08);
+    box-shadow: 0 8px 32px rgba(128, 0, 0, 0.08);
     border: 1px solid #edf2f7;
     justify-content: space-between;
 }
@@ -190,7 +190,7 @@ textarea:focus {
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 700;
-    box-shadow: 0 1px 4px rgba(128,0,0,0.06);
+    box-shadow: 0 1px 4px rgba(128, 0, 0, 0.06);
     transition: all 0.2s ease;
     margin-top: 1.2rem;
     background: linear-gradient(90deg, #800000 60%, #a83232 100%);
@@ -226,7 +226,7 @@ textarea:focus {
     padding: 1rem;
     font-size: 0.95rem;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
 }
 
 .selected-files-header {
@@ -268,7 +268,7 @@ textarea:focus {
 
 .selected-file-item:hover {
     border-color: #cbd5e0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transform: translateY(-1px);
 }
 
@@ -319,8 +319,8 @@ textarea:focus {
     padding: 0.5rem 0.75rem;
     font-size: 0.98rem;
     color: #333;
-    border: 1px solid rgba(128,0,0,0.1);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid rgba(128, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .selected-files-list ul {
@@ -336,7 +336,7 @@ textarea:focus {
     margin: 0.5rem 0;
     font-weight: 600;
     border-left: 5px solid #d32f2f;
-    box-shadow: 0 2px 8px rgba(128,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.04);
 }
 
 .error-tooltip {
@@ -358,7 +358,7 @@ textarea:focus {
     margin: 0.5rem 0;
     font-weight: 600;
     border-left: 5px solid #2e7d32;
-    box-shadow: 0 2px 8px rgba(46,125,50,0.04);
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.04);
 }
 
 .reviews-list {
@@ -408,7 +408,7 @@ textarea:focus {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 1px 2px rgba(128,0,0,0.03);
+    box-shadow: 0 1px 2px rgba(128, 0, 0, 0.03);
     outline: none;
     min-width: 70px;
 }
@@ -421,14 +421,14 @@ textarea:focus {
     background: linear-gradient(90deg, #800000 60%, #a83232 100%);
     color: #fff;
     border-color: #800000;
-    box-shadow: 0 2px 8px rgba(128,0,0,0.10);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.10);
 }
 
 .sort-btn:hover:not(.active) {
     background: #fff3f3;
     color: #800000;
     border-color: #a83232;
-    box-shadow: 0 2px 8px rgba(128,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.06);
     transform: translateY(-2px);
 }
 
@@ -438,15 +438,15 @@ textarea:focus {
     background: #fff;
     border-radius: 12px;
     border-left: 5px solid transparent;
-    border-right: 1px solid rgba(128,0,0,0.1);
-    border-bottom: 1px solid rgba(128,0,0,0.1);
+    border-right: 1px solid rgba(128, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(128, 0, 0, 0.1);
     border-top: none;
     font-size: 1.01rem;
     padding: 1rem;
     gap: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 1rem;
-    box-shadow: 0 4px 20px rgba(128,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(128, 0, 0, 0.06);
     transform-origin: center;
     will-change: transform, box-shadow;
 }
@@ -475,7 +475,7 @@ textarea:focus {
 
 .review-card-table:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(128,0,0,0.12);
+    box-shadow: 0 8px 32px rgba(128, 0, 0, 0.12);
 }
 
 .review-table-header {
@@ -489,9 +489,9 @@ textarea:focus {
     font-size: 1.01rem;
     padding: 0.75rem;
     margin-bottom: 0.75rem;
-    border-bottom: 2px solid rgba(128,0,0,0.1);
+    border-bottom: 2px solid rgba(128, 0, 0, 0.1);
     letter-spacing: 0.1px;
-    box-shadow: 0 1px 4px rgba(128,0,0,0.02);
+    box-shadow: 0 1px 4px rgba(128, 0, 0, 0.02);
     border-radius: 8px 8px 0 0;
 }
 
@@ -502,10 +502,12 @@ textarea:focus {
     font-size: 0.95rem;
     padding-right: 0.5rem;
 }
+
 .review-table-user .student-name {
     color: #333;
     font-weight: 600;
 }
+
 .review-table-user .user-email {
     color: #888;
     font-size: 0.93rem;
@@ -550,7 +552,7 @@ textarea:focus {
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(128,0,0,0.06);
+    box-shadow: 0 1px 4px rgba(128, 0, 0, 0.06);
     transition: background 0.18s, transform 0.18s;
 }
 
@@ -568,7 +570,7 @@ textarea:focus {
     background: #f8f5f5;
     border-radius: 10px;
     padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(128,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.04);
 }
 
 .view-attachments-button {
@@ -590,7 +592,7 @@ textarea:focus {
     box-shadow: 0 4px 16px rgba(30, 136, 229, 0.2);
 }
 
-.attachment-item div{
+.attachment-item div {
     justify-content: flex-start !important;
 }
 
@@ -614,14 +616,14 @@ textarea:focus {
     font-size: 0.9rem;
     border: 1px solid #e2e8f0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(128,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.06);
 }
 
 .custom-upload-label:hover {
     background-color: #f5f7fa;
     border: 1.5px solid #800000;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(128,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(128, 0, 0, 0.12);
 }
 
 .attachments-list {
@@ -657,8 +659,14 @@ textarea:focus {
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 640px) {
@@ -666,12 +674,12 @@ textarea:focus {
         padding: 1rem;
         margin: 0.5rem;
     }
-    
+
     .tab-buttons button {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
-    
+
     .review-card-table {
         padding: 0.75rem;
     }

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {useLocation, useNavigate, useParams} from 'react-router-dom';
 import {FaFilePdf} from 'react-icons/fa';
-import { FaStar, FaArrowLeft, FaTrash, FaCommentAlt, FaArrowDown, FaArrowUp } from 'react-icons/fa';
+import {FaStar, FaArrowLeft, FaTrash, FaCommentAlt, FaArrowDown, FaArrowUp} from 'react-icons/fa';
 import CustomNavbar from '../app-custom/CustomNavbar';
 import StarRatings from 'react-star-ratings';
 import {
@@ -84,10 +84,10 @@ const CourseReviewPage = () => {
     };
 
     const fetchCourseFlashCards = async () => {
-        try{
+        try {
             const flashcards = await getFlashCardsByCourse(courseId);
             setDefaultFlashCards(flashcards);
-        }catch (err) {
+        } catch (err) {
             console.error('Error fetching falshCards:', err);
             setError('Failed to fetch falshCards. Please try again later.');
         }
@@ -205,7 +205,7 @@ const CourseReviewPage = () => {
     };
 
     const handleRemoveFile = (indexToRemove) => {
-        setSelectedFiles(prevFiles => 
+        setSelectedFiles(prevFiles =>
             prevFiles.filter((_, index) => index !== indexToRemove)
         );
     };
@@ -240,7 +240,7 @@ const CourseReviewPage = () => {
                     className="back-button"
                     onClick={() => navigate('/course-reviews')}
                 >
-                    <FaArrowLeft /> Back to Course Hub
+                    <FaArrowLeft/> Back to Course Hub
                 </button>
 
                 {error && <div className="error-message">{error}</div>}
@@ -279,11 +279,17 @@ const CourseReviewPage = () => {
                             generated
                             for this course are used to make a default quiz available for all students! Currently there
                             are {defaultFlashCards.length} unique
-                            flashcards available. As more students upload attachments and generate flashcards for this course, there will be more!
+                            flashcards available. As more students upload attachments and generate flashcards for this
+                            course, there will be more!
                         </p>
                         <button
                             className="back-button"
-                            onClick={() => navigate(`/flashcard-game/${courseId}`, { state: { default: true, from: location.pathname } })}
+                            onClick={() => navigate(`/flashcard-game/${courseId}`, {
+                                state: {
+                                    default: true,
+                                    from: location.pathname
+                                }
+                            })}
                         >
                             Try Quiz
                         </button>
@@ -311,7 +317,7 @@ const CourseReviewPage = () => {
                 {activeTab === 'reviews' && (
                     <div className="reviews-section">
                         <form onSubmit={handleSubmitReview} className="new-review-form">
-                            <h3><FaStar className="form-icon" /> Add Your Review</h3>
+                            <h3><FaStar className="form-icon"/> Add Your Review</h3>
                             <div className="rating-selection">
                                 <label>Your Rating:</label>
                                 <StarRatings
@@ -335,7 +341,7 @@ const CourseReviewPage = () => {
                                     id="feedback"
                                     placeholder="Write your feedback here..."
                                     value={newReview.feedback}
-                                    onChange={(e) => setNewReview({ ...newReview, feedback: e.target.value })}
+                                    onChange={(e) => setNewReview({...newReview, feedback: e.target.value})}
                                     rows="4"
                                 />
                             </div>
@@ -356,13 +362,13 @@ const CourseReviewPage = () => {
                                         className={`sort-btn ${sortOrder === 'latest' ? 'active' : ''}`}
                                         onClick={() => setSortOrder('latest')}
                                     >
-                                        <FaArrowDown /> Latest
+                                        <FaArrowDown/> Latest
                                     </button>
                                     <button
                                         className={`sort-btn ${sortOrder === 'oldest' ? 'active' : ''}`}
                                         onClick={() => setSortOrder('oldest')}
                                     >
-                                        <FaArrowUp /> Oldest
+                                        <FaArrowUp/> Oldest
                                     </button>
                                 </div>
                             </div>
@@ -447,10 +453,10 @@ const CourseReviewPage = () => {
                                         {selectedFiles.map((file, idx) => (
                                             <li key={idx} className="selected-file-item">
                                                 <div className="file-info">
-                                                    <FaFilePdf className="file-icon" />
+                                                    <FaFilePdf className="file-icon"/>
                                                     <span className="file-name">{file.name}</span>
                                                 </div>
-                                                <button 
+                                                <button
                                                     className="remove-file-btn"
                                                     onClick={() => handleRemoveFile(idx)}
                                                     title="Remove file"
@@ -502,17 +508,18 @@ const CourseReviewPage = () => {
                                             <div className="review-table-date">
                                                 {new Date(comment.date).toLocaleString()}
                                                 {studentEmail === comment.student.email && (
-                                                        <button
-                                                            className="review-table-delete-btn"
-                                                            onClick={() => handleDeleteButton(comment.id)}
-                                                        >
-                                                            <FaTrash/>
-                                                        </button>
+                                                    <button
+                                                        className="review-table-delete-btn"
+                                                        onClick={() => handleDeleteButton(comment.id)}
+                                                    >
+                                                        <FaTrash/>
+                                                    </button>
                                                 )}
                                             </div>
                                         </div>
 
-                                        <button onClick={() => toggleAttachments(comment.id)} className={"view-attachments-button"}>
+                                        <button onClick={() => toggleAttachments(comment.id)}
+                                                className={"view-attachments-button"}>
                                             {expandedComments.has(comment.id) ? 'Hide Attachments' : 'Show Attachments'}
                                         </button>
 

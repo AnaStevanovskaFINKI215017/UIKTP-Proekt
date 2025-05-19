@@ -334,7 +334,7 @@ const SemesterPage = () => {
                                     name: semesterName,
                                     courses: chosenSubjects.map(cs => ({
                                         id: cs.id
-                                    }) )
+                                    }))
                                 };
 
                                 try {

@@ -92,7 +92,6 @@ const Admin = () => {
                 )
             );
         } catch (error) {
-            // Always reload and check the latest data, not stale state
             let latestSubjects = [];
             try {
                 const coursesData = await getCourses();
@@ -241,7 +240,7 @@ const Admin = () => {
                             }
                         />
                     </div>
-                    <div style={{ display: 'flex', gap: '12px', width: '100%', justifyContent: 'center' }}>
+                    <div style={{display: 'flex', gap: '12px', width: '100%', justifyContent: 'center'}}>
                         <button className="form-btn" onClick={(e) => {
                             e.preventDefault();
                             editing ? handleSaveEdit() : handleAddSubject();
@@ -254,7 +253,7 @@ const Admin = () => {
                         {editing && (
                             <button
                                 className="form-btn"
-                                style={{ background: '#eee', color: '#fff', border: '1.5px solid #800000' }}
+                                style={{background: '#eee', color: '#fff', border: '1.5px solid #800000'}}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setEditing(null);
@@ -308,7 +307,8 @@ const Admin = () => {
                                         <FaEdit/>
                                     </button>
                                     <button className="action-btn delete-action"
-                                            onClick={() => handleDeleteSubject(subject.id ?? subject.courseId)} title="Delete">
+                                            onClick={() => handleDeleteSubject(subject.id ?? subject.courseId)}
+                                            title="Delete">
                                         <FaTrash/>
                                     </button>
                                 </div>

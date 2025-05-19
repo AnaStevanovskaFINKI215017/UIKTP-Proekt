@@ -11,7 +11,7 @@ export const login = async (email, password) => {
             localStorage.setItem("token", token);
             localStorage.setItem("email", email);
             localStorage.setItem("name", name);
-            localStorage.setItem("role", role );
+            localStorage.setItem("role", role);
             document.cookie = `jwt=${token}; path=/`;
         }
     } catch (err) {
@@ -228,12 +228,12 @@ export const generateFlashCards = async (attachmentId, numFlashcards) => {
 };
 
 export const exportFlashCards = async (courseId) => {
-    try{
+    try {
         const response = await axios.get(`${API_URL}/flashcards/export/${courseId}`, {
             withCredentials: true
         });
         return response.data;
-    }catch (err){
+    } catch (err) {
         console.error(err);
         if (err.response?.status === 403) {
             console.error("You are not authorized. Maybe session expired?");
@@ -318,12 +318,12 @@ export const createSemester = async (semesterData, email) => {
 };
 
 export const getCourseRecommendations = async (takenSubjects) => {
-    try{
+    try {
         const response = await axios.post(`${API_URL}/courses/recommend`, takenSubjects, {
             withCredentials: true
         });
         return response.data;
-    }catch(error){
+    } catch (error) {
         console.error("Error fetching recommendations: " + error);
         if (error.response?.status === 403) {
             console.error("You are not authorized. Maybe session expired?");
@@ -343,7 +343,7 @@ export const submitSubjectReview = async (courseId, reviewData) => {
         // Submit rating
         if (reviewData.rating) {
             requests.push(
-                axios.post(`${API_URL}/courses/${courseId}/ratings`, {},{
+                axios.post(`${API_URL}/courses/${courseId}/ratings`, {}, {
                     withCredentials: true,
                     params: {
                         ratingValue: rating
@@ -609,11 +609,11 @@ export const uploadCourseAttachment = async (formData) => {
 }
 
 export const deleteAttachment = async (attachmentId) => {
-    try{
+    try {
         await axios.delete(`${API_URL}/attachments/${attachmentId}`, {
             withCredentials: true
         });
-    }catch (error){
+    } catch (error) {
         console.error('Error during deleting attachment:', error);
         if (error.response?.status === 403) {
             console.error("You are not authorized. Maybe session expired?");

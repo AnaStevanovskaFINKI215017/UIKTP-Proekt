@@ -437,10 +437,9 @@ input[type="text"]:focus {
     border-radius: 0 0 12px 12px;
 }
 
-/* Sticky Toast Notification */
 .sticky-toast {
     position: fixed !important;
-    top: 72px !important; /* Adjust if your navbar is taller */
+    top: 72px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 9999 !important;

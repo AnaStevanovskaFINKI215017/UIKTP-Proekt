@@ -1,5 +1,5 @@
 .ai-navbar-shadow {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07) !important;
     border-bottom: 1px solid #ececec !important;
 }
 
@@ -51,12 +51,12 @@
     color: #800000 !important;
     border: 1px solid #80000022 !important;
     border-radius: 6px !important;
-    padding: 4px 16px !important; /* Increased horizontal padding for separation */
+    padding: 4px 16px !important;
     background: #fff7f7 !important;
     transition: background 0.2s, color 0.2s !important;
-    margin-left: 8px !important; /* Add margin to avoid overlap */
+    margin-left: 8px !important;
     margin-right: 8px !important;
-    z-index: 2 !important; /* Ensure above other elements */
+    z-index: 2 !important;
 }
 
 .ai-navbar-admin-link:hover,
@@ -81,7 +81,7 @@
     height: 2px !important;
     background: #800000 !important;
     transform: scaleX(0) !important;
-    transition: transform 0.25s cubic-bezier(.4,0,.2,1) !important;
+    transition: transform 0.25s cubic-bezier(.4, 0, .2, 1) !important;
     z-index: 0 !important;
 }
 

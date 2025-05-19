@@ -96,15 +96,15 @@
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
-    box-shadow: 0 15px 35px rgba(128, 0, 0, 0.15), 
-                0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 15px 35px rgba(128, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1) !important;
     transition: box-shadow 0.3s ease !important;
 }
 
 .flashcard:hover .flashcard-front,
 .flashcard:hover .flashcard-back {
     box-shadow: 0 20px 40px rgba(128, 0, 0, 0.2),
-                0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    0 8px 20px rgba(0, 0, 0, 0.12) !important;
 }
 
 .flashcard-front {
@@ -208,9 +208,9 @@
 }
 
 .flashcard-back .flashcard-content p {
-    color: #4a0000 !important;  /* Changed to dark maroon */
+    color: #4a0000 !important;
     background: rgba(128, 0, 0, 0.05) !important;
-    font-weight: 500 !important;  /* Added for better readability */
+    font-weight: 500 !important;
 }
 
 .flashcard-content p.long-text {

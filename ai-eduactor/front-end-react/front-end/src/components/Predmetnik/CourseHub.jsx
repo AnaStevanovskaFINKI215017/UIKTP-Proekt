@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import './CourseHub.css';
 import CustomNavbar from '../app-custom/CustomNavbar';
 import {
@@ -8,7 +8,7 @@ import {
     getFavoriteCourses,
     removeCourseFromFavorites,
 } from '../../services/api';
-import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import {FaHeart, FaRegHeart} from "react-icons/fa6";
 import StarRatings from 'react-star-ratings';
 
 const CourseHub = () => {
@@ -83,7 +83,7 @@ const CourseHub = () => {
             }
 
             setFavorites(prev => {
-                const updated = { ...prev, [courseId]: !isFavorite };
+                const updated = {...prev, [courseId]: !isFavorite};
                 localStorage.setItem('favoriteCourses', JSON.stringify(updated));
                 return updated;
             });
@@ -94,13 +94,16 @@ const CourseHub = () => {
 
     return (
         <>
-            <CustomNavbar />
+            <CustomNavbar/>
             <div className="header-section">
                 <h1>Course Hub</h1>
                 <p>Welcome to the Course Hub – your all-in-one space for academic collaboration and engagement.
-                    Here, you can mark your favorite courses for easy access, rate and review them based on your experience,
-                    and share valuable feedback with your peers. The hub also allows you to upload and access study materials,
-                    enabling file-sharing between students. Plus, you can take default quizzes created from the flashcards contributed
+                    Here, you can mark your favorite courses for easy access, rate and review them based on your
+                    experience,
+                    and share valuable feedback with your peers. The hub also allows you to upload and access study
+                    materials,
+                    enabling file-sharing between students. Plus, you can take default quizzes created from the
+                    flashcards contributed
                     by other students in your course – making learning more dynamic and collective.</p>
                 <div className="header-controls">
                     <div className="search-container">
@@ -145,9 +148,9 @@ const CourseHub = () => {
                                         aria-label="Toggle Favorite"
                                     >
                                         {favorites[subject.id] ? (
-                                            <FaHeart className="subject-heart-icon" />
+                                            <FaHeart className="subject-heart-icon"/>
                                         ) : (
-                                            <FaRegHeart className="subject-heart-icon" />
+                                            <FaRegHeart className="subject-heart-icon"/>
                                         )}
                                     </button>
                                 </div>
